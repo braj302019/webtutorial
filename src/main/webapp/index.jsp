@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>SCM can poll the changes</h2>
+<h2>GitHub Plugin</h2>
 </body>
 </html>
