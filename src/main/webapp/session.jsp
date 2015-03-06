@@ -19,6 +19,9 @@
 			</c:forEach>
 		</tr>
 	</table>
+	
+	Session ID
+	<c:out value="${pageContext.session.id }" />
 
 </body>
 </html>
