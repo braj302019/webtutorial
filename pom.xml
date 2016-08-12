@@ -7,6 +7,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>WebTutorial Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+
+	<scm>
+		<connection>scm:git:https://github.com/braj302019/webtutorial</connection>
+	</scm>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -39,6 +44,31 @@
 					<path>/webtutorial</path>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>buildnumber-maven-plugin</artifactId>
+				<version>1.4</version>
+				<executions>
+					<execution>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>create</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<doCheck>false</doCheck>
+					<doCreate>true</doCreate>
+					<shortRevisionLength>6</shortRevisionLength>
+					<timestampFormat>{0,date,yyyy-MM-dd HH:mm:ss}</timestampFormat>
+				</configuration>
+			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 	</build>
 </project>
